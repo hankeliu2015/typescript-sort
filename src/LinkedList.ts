@@ -22,4 +22,20 @@ export class LinkedList {
 
     tail.next = node;
   }
-}
+
+  get length(): number {
+    if (!this.head) {
+      return 0;
+    }
+
+    let length = 1;
+    let node = this.head;
+    while (node.head) {
+      length ++ ;
+      node.next;
+    }
+    return length;
+  }
+
+
+} //end of class
