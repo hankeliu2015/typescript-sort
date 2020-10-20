@@ -31,7 +31,7 @@ var LinkedList = /** @class */ (function () {
             }
             var length = 1;
             var node = this.head;
-            while (node.head) {
+            while (node.next) {
                 length++;
                 node.next;
             }
@@ -40,6 +40,22 @@ var LinkedList = /** @class */ (function () {
         enumerable: false,
         configurable: true
     });
+    LinkedList.prototype.at = function (index) {
+        if (!this.head) {
+            throw new Error('Index out of bounds');
+        }
+        var counter = 0;
+        // let node = this.head;
+        var node = this.head;
+        while (node) {
+            if (counter === index) {
+                return node;
+            }
+            counter++;
+            node = node.next;
+        }
+        throw new Error("index out of bounds");
+    };
     return LinkedList;
 }()); //end of class
 exports.LinkedList = LinkedList;

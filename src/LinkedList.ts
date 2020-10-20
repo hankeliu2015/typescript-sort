@@ -30,12 +30,28 @@ export class LinkedList {
 
     let length = 1;
     let node = this.head;
-    while (node.head) {
+    while (node.next) {
       length ++ ;
       node.next;
     }
     return length;
   }
 
+  at(index: number): Node {
+    if (!this.head) {
+      throw new Error('Index out of bounds')
+    }
+    let counter = 0;
+    // let node = this.head;
+    let node: Node | null = this.head;
+    while (node) {
+      if (counter === index) {
+        return node;
+      }
+      counter ++;
+      node = node.next;
+    }
+    throw new Error("index out of bounds")
+  }
 
 } //end of class
