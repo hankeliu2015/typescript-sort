@@ -2,10 +2,10 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var Sorter_1 = require("./Sorter");
 var NumbersCollection_1 = require("./NumbersCollection");
-var numbersCollection = new NumbersCollection_1.NumbersCollection([10, 3, -5, 100]);
+var numbersCollection = new NumbersCollection_1.NumbersCollection([-10, 0, 3, -5, 50]);
 var sorter = new Sorter_1.Sorter(numbersCollection);
 sorter.sort();
-console.log(numbersCollection);
+console.log(numbersCollection.data);
 // class Sorter {
 //   // collection: number[];
 //   // constructor(collection: number[]) {
