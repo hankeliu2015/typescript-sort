@@ -56,6 +56,12 @@ var LinkedList = /** @class */ (function () {
         }
         throw new Error("index out of bounds");
     };
+    LinkedList.prototype.compare = function (leftIndex, rightIndex) {
+        if (!this.head) {
+            throw new Error('Linked list is empty');
+        }
+        return this.at(leftIndex).data > this.at(rightIndex).data;
+    };
     return LinkedList;
 }()); //end of class
 exports.LinkedList = LinkedList;

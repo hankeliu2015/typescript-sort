@@ -54,4 +54,10 @@ export class LinkedList {
     throw new Error("index out of bounds")
   }
 
+  compare(leftIndex: number, rightIndex: number): boolean {
+    if (!this.head) {
+      throw new Error('Linked list is empty')
+    }
+    return this.at(leftIndex).data > this.at(rightIndex).data;
+  }
 } //end of class
