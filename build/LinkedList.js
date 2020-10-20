@@ -62,6 +62,21 @@ var LinkedList = /** @class */ (function () {
         }
         return this.at(leftIndex).data > this.at(rightIndex).data;
     };
+    LinkedList.prototype.swap = function (leftIndex, rightIndex) {
+        var leftNodeData = this.at(leftIndex).data;
+        this.at(leftIndex).data = this.at(rightIndex).data;
+        this.at(rightIndex).data = leftNodeData;
+    };
+    LinkedList.prototype.print = function () {
+        if (!this.head) {
+            throw new Error('Linked List is empty');
+        }
+        var node = this.head;
+        while (node) {
+            console.log(node.data);
+            node = node.next;
+        }
+    };
     return LinkedList;
 }()); //end of class
 exports.LinkedList = LinkedList;

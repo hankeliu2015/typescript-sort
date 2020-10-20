@@ -60,4 +60,21 @@ export class LinkedList {
     }
     return this.at(leftIndex).data > this.at(rightIndex).data;
   }
+
+  swap(leftIndex: number, rightIndex: number): void {
+    const leftNodeData = this.at(leftIndex).data;
+    this.at(leftIndex).data = this.at(rightIndex).data;
+    this.at(rightIndex).data = leftNodeData;
+  }
+
+  print(): void {
+    if (!this.head) {
+      throw new Error('Linked List is empty');
+    }
+    let node: Node | null = this.head;
+    while (node) {
+      console.log(node.data);
+      node = node.next;
+    }
+  }
 } //end of class
